@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/logo.png">
+  <link rel="apple-touch-icon" href="../assets/img/logo.png">
+  <link rel="shortcut icon" href="../assets/img/logo.png">
+  <title>Calculadoras | TLS Fisioterapia Home Care</title>
+  <link rel="canonical" href="https://tlsfisioterapia.com.br/tools/calculadoras.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css">
+
+  <link rel="stylesheet" href="../assets/css/reset.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/tools.css">
+
+  <script type="module" src="../assets/js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteudo</a>
+
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="../index.html" aria-label="Ir para a pagina inicial">
+        <img src="../assets/img/logo.png" alt="Logo TLS Fisioterapia" width="44" height="44">
+        <span class="brand-text"><strong>TLS Fisioterapia</strong><span>Home Care Humanizado</span></span>
+      </a>
+
+      <button class="menu-toggle" type="button" data-menu-toggle aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menu">
+        <i class="fi fi-rr-menu-burger" aria-hidden="true"></i>
+      </button>
+
+      <nav class="nav" id="menu-principal" data-nav aria-label="Menu principal">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="../index.html"><i class="fi fi-rr-home"></i>Home</a></li>
+          <li><a class="nav-link" href="../BLOG/index.html"><i class="fi fi-rr-document"></i>Blog</a></li>
+          <li><a class="nav-link" href="./calculadoras.html" aria-current="page"><i class="fi fi-rr-calculator"></i>Calculadoras</a></li>
+          <li><a class="nav-link" href="../contatos.html"><i class="fi fi-rr-phone-call"></i>Contatos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="section">
+    <div class="container stack">
+      <span class="page-kicker reveal"><i class="fi fi-rr-calculator"></i> Calculadoras</span>
+      <h1 class="page-title reveal">Ferramentas de apoio com leitura clara no mobile</h1>
+      <p class="page-subtitle reveal">Resultados com finalidade educativa. Nao substituem avaliacao clinica presencial.</p>
+
+      <div class="tools-wrap">
+        <article class="calculator-card reveal">
+          <h2 class="section-title">Calculadora de IMC</h2>
+          <form class="form-grid" data-imc-form>
+            <div class="field"><label for="imc-peso">Peso (kg)</label><input id="imc-peso" name="peso" type="number" min="1" step="0.1" required></div>
+            <div class="field"><label for="imc-altura">Altura (cm)</label><input id="imc-altura" name="altura" type="number" min="1" step="0.1" required></div>
+            <button class="btn btn-primary" type="submit">Calcular IMC</button>
+          </form>
+          <p class="result-card" data-imc-result aria-live="polite">Preencha os campos para calcular.</p>
+        </article>
+
+        <article class="calculator-card reveal">
+          <h2 class="section-title">Estimativa de hidratacao</h2>
+          <form class="form-grid" data-hidratacao-form>
+            <div class="field"><label for="hidra-peso">Peso (kg)</label><input id="hidra-peso" name="peso" type="number" min="1" step="0.1" required></div>
+            <div class="field"><label for="hidra-fator">Nivel de atividade</label><select id="hidra-fator" name="fator" required><option value="30">Baixa (30 ml/kg)</option><option value="35" selected>Moderada (35 ml/kg)</option><option value="40">Alta (40 ml/kg)</option></select></div>
+            <button class="btn btn-primary" type="submit">Calcular hidratacao</button>
+          </form>
+          <p class="result-card" data-hidratacao-result aria-live="polite">Preencha os campos para calcular.</p>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-base">
+      <div class="container">
+        &copy; <span data-year></span> TLS Fisioterapia Home Care.
+        <a href="../politica-de-privacidade.html">Privacidade</a> |
+        <a href="../politica-de-cookies.html">Cookies</a> |
+        <a href="#" data-open-cookie-settings>Configurar cookies</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
+
+

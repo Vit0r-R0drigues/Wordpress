@@ -1,0 +1,10 @@
+# Arquivos sensíveis
+.env
+.env.example
+
+# Configurações de servidor (irrelevantes para GitHub Pages)
+nginx.conf
+
+# Sistema
+.DS_Store
+Thumbs.db

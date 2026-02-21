@@ -1,0 +1,8 @@
+﻿User-agent: *
+Allow: /
+
+Disallow: /.env
+Disallow: /.env.example
+Disallow: /.git/
+
+Sitemap: https://tlsfisioterapia.com.br/sitemap.xml

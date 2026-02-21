@@ -1,0 +1,43 @@
+﻿# Apache hardening and routing
+Options -Indexes
+ServerSignature Off
+
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Legacy route compatibility
+RewriteRule ^sobre/?$ /HTML/index.html [L,R=301]
+RewriteRule ^servicos/?$ /HTML/servicos.html [L,R=301]
+RewriteRule ^contatos/?$ /contatos.html [L,R=301]
+
+# Canonical error page
+ErrorDocument 404 /404.html
+
+# Security headers
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), camera=(), microphone=()"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  Header always set Content-Security-Policy "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self' https://api.whatsapp.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' https://fonts.googleapis.com https://cdn-uicons.flaticon.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com https://cdn-uicons.flaticon.com; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://region1.google-analytics.com; upgrade-insecure-requests"
+</IfModule>
+
+# Cache policy
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+</IfModule>
+
+# Protect sensitive files
+<FilesMatch "^(\.env|\.env\.example|nginx\.conf)$">
+  Require all denied
+</FilesMatch>

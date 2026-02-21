@@ -1,0 +1,9 @@
+﻿@media (min-width: 62rem) {
+  .blog-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .blog-article {
+    padding: 1.4rem;
+  }
+}
